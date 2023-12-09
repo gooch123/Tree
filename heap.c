@@ -40,6 +40,7 @@ void delete_heap(){
     heap[heap_size--].key = 0;
     while (parent * 2 <= heap_size){
         child = (heap[parent * 2].key >= heap[parent * 2 + 1].key) ? parent * 2 : parent * 2 + 1;
+        if(heap[parent].key >= heap[child].key) break;
         temp = heap[child].key;
         heap[child].key = heap[parent].key;
         heap[parent].key = temp;
@@ -52,8 +53,6 @@ void printf_heap(){
         printf("%3d",heap[i]);
     }
 }
-
-
 
 void heap_exec(){
     insert_max_heap(20);
