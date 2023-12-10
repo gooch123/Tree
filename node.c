@@ -11,3 +11,10 @@ NODE* new_node(){
     temp->left_child = NULL;
     return temp;
 }
+
+B_NODE* new_B_node(){
+    B_NODE * temp = (NODE*) malloc(sizeof (NODE));
+    temp->right_child = NULL;
+    temp->left_child = NULL;
+    return temp;
+}
